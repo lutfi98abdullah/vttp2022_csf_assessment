@@ -8,18 +8,20 @@ import org.springframework.stereotype.Service;
 
 import vttp2022.assessment.csf.orderbackend.models.Order;
 import vttp2022.assessment.csf.orderbackend.models.OrderSummary;
+import vttp2022.assessment.csf.orderbackend.repositories.OrderRepository;
 
 @Service
 public class OrderService {
 
 	@Autowired
 	private PricingService priceSvc;
+	private OrderRepository orderRepo;
 
 	// POST /api/order
 	// Create a new order by inserting into orders table in pizzafactory database
 	// IMPORTANT: Do not change the method's signature
 	public void createOrder(Order order) {
-		
+		return orderRepo.postOrder(name, email, size, sauce, thickCrust, toppings, comments);
 	}
 
 	// GET /api/order/<email>/all
@@ -27,5 +29,6 @@ public class OrderService {
 	// IMPORTANT: Do not change the method's signature
 	public List<OrderSummary> getOrdersByEmail(String email) {
 		// Use priceSvc to calculate the total cost of an order
+
 	}
 }

@@ -3,6 +3,8 @@ package vttp2022.assessment.csf.orderbackend.models;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.springframework.jdbc.support.rowset.SqlRowSet;
+
 // IMPORTANT: You can add to this class, but you cannot delete its original content
 
 public class Order {
@@ -40,4 +42,7 @@ public class Order {
 
 	public void setComments(String comments) { this.comments = comments; }
 	public String getComments() { return this.comments; }
+	public static Object create(SqlRowSet rs) {
+		return null;
+	}
 }
